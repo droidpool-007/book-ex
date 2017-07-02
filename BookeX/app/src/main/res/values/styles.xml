@@ -1,0 +1,86 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="colorPrimary">@color/launcher_color</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">@color/secondary_color</item>
+        <item name="android:textColorPrimary">@color/text_color</item>
+    </style>
+
+    <style name="toolbar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/launcher_color</item>
+        <!--background_material_dark-->
+        <item name="android:elevation">3dip</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="textview_big">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:padding">5dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="textview_big_white" parent="textview_big">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="textview_big_launcher" parent="textview_big">
+        <item name="android:textColor">@color/launcher_color</item>
+    </style>
+
+    <style name="textview_normal" parent="textview_big">
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+
+    <style name="textview_normal_white" parent="textview_normal">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="textview_normal_launcher" parent="textview_normal">
+        <item name="android:textColor">@color/launcher_color</item>
+    </style>
+
+    <style name="textview_medium" parent="textview_normal">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <style name="textview_medium_white" parent="textview_normal_white">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <style name="Button_Primary" parent="textview_normal_white">
+        <item name="android:height">50dip</item>
+        <item name="android:background">@drawable/button_ripple_primary</item>
+    </style>
+
+    <style name="Button_Secondary" parent="textview_normal_launcher">
+        <item name="android:height">50dip</item>
+        <item name="android:background">@drawable/button_ripple_secondary</item>
+    </style>
+
+<!-- custom styles -->
+    <style name="textview_note" parent="textview_medium">
+        <item name="android:textColor">@color/secondary_color</item>
+    </style>
+
+    <style name="textview_headers" parent="textview_normal">
+        <item name="android:textColor">@color/secondary_color</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="TextAppearence.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/divider</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_color">#434343</color>
+
+    <color name="launcher_color">#9A1106</color> <!--99ffdd-->
+
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+    <color name="secondary_color">#77757A</color>
+    <color name="divider">#cccccc</color>
+
+    <color name="sunset_orange">#FD6154</color>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="navigationListModel"
+            type="com.bookex.features.home.NavigationListModel" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_main" />
+
+
+        <!-- NAVIGATION -->
+        <LinearLayout
+            android:id="@+id/navigation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:isScrollContainer="true">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/topBarGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="@dimen/material_headerSizeScreenPercent" />
+
+                <ImageView
+                    android:id="@+id/navigation_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:src="@mipmap/ic_launcher_round"
+                    app:layout_constraintBottom_toTopOf="@+id/navigation_username"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.bookex.widgets.TextViewCustom
+                    android:id="@+id/navigation_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_32"
+                    android:layout_marginStart="@dimen/dp_32"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{navigationListModel.username}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16"
+                    app:layout_constraintBottom_toTopOf="@+id/navigation_phoneNo"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.bookex.widgets.TextViewCustom
+                    android:id="@+id/navigation_phoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_32"
+                    android:layout_marginStart="@dimen/dp_32"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{navigationListModel.mobile}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintBottom_toTopOf="@+id/topBarGuideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvNavigationList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/launcher_color"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:paddingTop="@dimen/dp_16"
+                    app:bindData="@{navigationListModel.navigationList}"
+                    app:layoutId="@{@layout/cell_navigation_item}"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/topBarGuideline" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
+</layout>

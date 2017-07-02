@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar" />
+
+    <com.bookex.widgets.TextViewCustom
+        style="@style/textview_normal"
+        android:text="Welcome to BookeX"
+        app:isBold="1" />
+
+    <com.bookex.widgets.TextViewCustom
+        style="@style/textview_note"
+        android:text="For now we are working for Engineering courses for Mumbai University."
+        app:isBold="1" />
+
+    <com.bookex.widgets.TextViewCustom
+        style="@style/textview_headers"
+        android:text="Stream"
+        app:isBold="1" />
+
+    <com.bookex.widgets.TextViewCustom
+        style="@style/textview_medium"
+        android:text="Engineeting"
+        app:isBold="1" />
+
+    <FrameLayout
+        android:id="@+id/books_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dip">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/book_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fab_icon" />
+
+        <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/fab_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom|right"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@android:drawable/ic_menu_add"
+            app:backgroundTint="@color/launcher_color"
+            app:borderWidth="0dip"
+            app:elevation="4dip"
+            app:fabSize="normal" />
+    </FrameLayout>
+</LinearLayout>
